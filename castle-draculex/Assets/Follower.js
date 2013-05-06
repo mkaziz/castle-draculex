@@ -11,6 +11,7 @@ var colliding = false;
 function Start () {
 	transform.LookAt(leader);
 }
+var hit : RaycastHit;
 
 function FixedUpdate(){ 
 	
@@ -29,8 +30,12 @@ function FixedUpdate(){
 			}
 			speed = 3;
 	   	}
-	
-	   	rigidbody.MovePosition(rigidbody.position + transform.forward * speed * Time.deltaTime);
+	   	
+   		rigidbody.MovePosition(rigidbody.position + transform.forward * speed * Time.deltaTime);
+	}
+	else {
+		Application.Quit();	
+		Debug.Break();
 	}
 }
 
@@ -38,6 +43,7 @@ function OnTriggerEnter(other: Collider)
 {
 	Debug.Log("Collision");
 	colliding = true;
+	Debug.Break();
 	
 }
 

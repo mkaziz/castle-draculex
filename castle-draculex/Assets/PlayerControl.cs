@@ -26,5 +26,17 @@ public class PlayerControl : MonoBehaviour {
 
 			controller.Move(moveDirection * Time.deltaTime);
 	  }
+    
+	public float pushPower = 2.0F;
+    void OnControllerColliderHit(ControllerColliderHit hit) {
+        Rigidbody body = hit.collider.attachedRigidbody;
+        Debug.Log("HIT");
+		if (body == null || body.isKinematic)
+            return;
+        
+        Vector3 pushDir = new Vector3(0, hit.moveDirection.y, hit.moveDirection.z);
+        body.velocity = pushDir * pushPower;
+		
+    }
 }
 
