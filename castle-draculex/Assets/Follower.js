@@ -1,4 +1,4 @@
-#pragma strict
+#pragma strict	
 
 
 var leader : Transform; 
@@ -8,14 +8,14 @@ var speed : float = 5; // The speed of the follower
 
  
 function Start () {
-
+	transform.LookAt(leader);
 }
 
-function Update(){ 
+function FixedUpdate(){ 
 	
 	var distance = Vector3.Distance(leader.position, transform.position);
 	
-	if (distance < 7) {
+	if(distance < 7) {
 	   	transform.LookAt(leader);
 	   	speed = 7;  
    	}
@@ -26,8 +26,8 @@ function Update(){
 		}
 		speed = 3;
    	}
-   	
-   	transform.Translate(speed*Vector3.forward*Time.deltaTime);
+
+   	rigidbody.MovePosition(rigidbody.position + transform.forward * speed * Time.deltaTime);
 
 }
 
