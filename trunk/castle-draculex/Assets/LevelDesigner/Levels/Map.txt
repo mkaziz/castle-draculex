@@ -1,0 +1,2 @@
+Room# 	Door_char 	Connects_to_room# 	EntryPt
+1	A		2	     		A
