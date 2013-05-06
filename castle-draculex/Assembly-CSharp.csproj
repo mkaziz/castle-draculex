@@ -106,6 +106,10 @@
     <Compile Include="Assets\AstarPathfindingProject\Utilities\SizeProfiler.cs" />
     <Compile Include="Assets\AstarPathfindingProject\Utilities\UnityReferenceHelper.cs" />
     <Compile Include="Assets\AstarPathfindingProject\changelog.cs" />
+    <Compile Include="Assets\LevelDesigner\LevelLoader.cs" />
+    <Compile Include="Assets\LevelDesigner\Map.cs" />
+    <Compile Include="Assets\LevelDesigner\Room.cs" />
+    <Compile Include="Assets\LevelDesigner\Tile.cs" />
     <Compile Include="Assets\Orthello\Examples\0 - Simple Examples\(Unity Pro) NavMesh Pathfinding\Agent.cs" />
     <Compile Include="Assets\Orthello\Examples\0 - Simple Examples\3D integration\App.cs" />
     <Compile Include="Assets\Orthello\Examples\0 - Simple Examples\3D integration\Arrow.cs" />
@@ -213,6 +217,7 @@
     <Compile Include="Assets\iTween\Sample\RotateSample.cs" />
     <Compile Include="Assets\iTween\Sample\SampleInfo.cs" />
     <None Include="Assets\Orthello\Examples\0 - Simple Examples\TextSprites\lorem-rus-utf8.txt" />
+    <None Include="Assets\LevelDesigner\Levels\Key.txt" />
     <None Include="Assets\AstarPathfindingProject\ExampleScenes\_Example Scenes.txt" />
     <None Include="Assets\AstarPathfindingProject\ExampleScenes\Materials\Projector Light.shader" />
     <None Include="Assets\Orthello\Examples\0 - Simple Examples\RotateTowards\-read-me.txt" />
@@ -222,6 +227,8 @@
     <None Include="Assets\Orthello\-Update-Upgrade info.txt" />
     <None Include="Assets\Orthello\Examples\0 - Simple Examples\TextSprites\Atlases\chalk.xml" />
     <None Include="Assets\AstarPathfindingProject\Readme_upgrading.txt" />
+    <None Include="Assets\LevelDesigner\Levels\Map.txt" />
+    <None Include="Assets\LevelDesigner\Levels\Rooms\Room1.txt" />
     <None Include="Assets\Orthello\Examples\0 - Simple Examples\TextSprites\Atlases\glyph.xml" />
     <None Include="Assets\AstarPathfindingProject\link.xml" />
     <None Include="Assets\Orthello\Examples\0 - Simple Examples\TextSprites\Atlases\img.xml" />
