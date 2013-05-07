@@ -13,9 +13,10 @@ public class Room : MonoBehaviour {
 	
 	public Component room_component;
 	
-	enum tileType {Floor, Wall, Door};
+	enum tileType {Nothing=0, Floor=1, Wall=2, Door=3};
 	
 	public Transform prefabTile;
+	public Transform ncTile;
 	
 	List<Door> door_list = new List<Door>();
 	
@@ -49,30 +50,38 @@ public class Room : MonoBehaviour {
 		
 		int numtiles = sizeX * sizeY;
 		
-		
-		prefabTile.transform.localScale = new Vector3(tilesize, tilesize, depth);
+		prefabTile.transform.localScale =  new Vector3(tilesize, tilesize, depth);
+		ncTile.transform.localScale = new Vector2(tilesize, tilesize);
 		
 		for (int y = 0; y < sizeY; y++) {
 			for (int x=0; x < sizeX; x++) {
 				
 				//center room
-				Vector3 pos = new Vector3(tilesize*x, -tilesize*y, depth);
-				float halfy = sizeY*tilesize/2;
+				Vector3 current_pos = new Vector3(tilesize*x, -tilesize*y, depth);
+				/*float halfy = sizeY*tilesize/2;
 				float halfx = sizeX*tilesize/2;
 				Vector3 adjustment = new Vector3(-halfx, halfy, 0); //center room
-				Vector3 current_pos = pos + adjustment;
-				
+				Vector3 current_pos = pos + adjustment;*/
+				int room_pos_val = RoomMap[x,y];
+				if(room_pos_val != ' ' && room_pos_val != null && room_pos_val != -1 && room_pos_val != 0) {
 				var myTile = (Transform)Instantiate(prefabTile, current_pos, Quaternion.identity);
 				//myTile.transform.localScale = new Vector3(tilesize, tilesize, depth);
 				
-				switch (RoomMap[x,y]) {
+				switch (room_pos_val) {
 				case (int)tileType.Floor:
+					//var myFloorTile = (Transform)Instantiate(ncTile, current_pos, Quaternion.identity);
+					//myFloorTile.transform.up = new Vector3(0,0,-1);
+					//Plane myFloorTile = new Plane(new Vector3(0,0,-1), current_pos);
 					Floor ftile = new Floor(myTile, current_pos, room_number);
 					break;
 				case (int)tileType.Wall: 
+					
+					//var myTile = (Transform)Instantiate(prefabTile, current_pos, Quaternion.identity);
 					Wall wtile = new Wall(myTile, current_pos, room_number);
 					break;
 				case (int)tileType.Door:
+					//var myDoorTile = (Transform)Instantiate(ncTile, current_pos, Quaternion.identity);
+					//myDoorTile.transform.up = new Vector3(0,0,-1);
 					Door dtile = new Door(myTile, current_pos, room_number);
 					door_list.Add(dtile);
 					break;
@@ -80,6 +89,8 @@ public class Room : MonoBehaviour {
 					Debug.Log ("Unrecognized character in room "+room_number+" text file.");
 					break;
 				}
+				}
+				
 
 			}
 		}

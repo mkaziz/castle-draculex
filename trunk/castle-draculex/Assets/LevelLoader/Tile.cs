@@ -10,19 +10,14 @@ public abstract class Tile : LevelLoader {// : MonoBehaviour {
 	public int tilesize = 20; //master tilesize is in Map
 
 	public Vector3 position = new Vector3(0,0,0);
-	public Color tcolor = Color.yellow;
-	public bool obstacle = false;
 	protected int room_num = -1;
 	
+	//save values of room from the room this was initialized in
 	public Tile(Transform mt, Vector3 myPosition, int rn) {
 		tilesize = new Map().tilesize;
 		position = myPosition;
 		myTile = mt;
 		room_num = rn;
-		
-		//var myTile = (Transform)Instantiate(prefabTile, myPosition, Quaternion.identity);
-		//Vector3 s = myTile.transform.localScale;
-		//myTile.transform.localScale = new Vector3(tilesize, tilesize, s.z);
 	}
 	
 	public abstract void collide();
@@ -44,9 +39,9 @@ public abstract class Tile : LevelLoader {// : MonoBehaviour {
 public class Floor : Tile {
 	
 	public Floor(Transform mt, Vector3 position, int rn) : base(mt, position, rn) {
-		tcolor = Color.black;
-		myTile.renderer.material.color = tcolor;	
+		myTile.renderer.material.mainTexture = (Texture2D) Resources.Load("FloorTexture", typeof(Texture2D));
 	}
+	
 	public override void collide() {
 		//do nothing
 	}
@@ -57,12 +52,8 @@ public class Floor : Tile {
 
 public class Wall : Tile {
 	
-	//BoxCollider collide = new BoxCollider();
-	
 	public Wall(Transform mt, Vector3 position, int rn) : base(mt, position, rn) {
-		obstacle = true;
-		tcolor = Color.white;
-		myTile.renderer.material.color = tcolor;
+		myTile.renderer.material.mainTexture = (Texture2D) Resources.Load("WallTexture", typeof(Texture2D));
 		myTile.transform.localScale = new Vector3(myTile.localScale.x, myTile.localScale.y, 5);
 	}
 	
@@ -77,8 +68,11 @@ public class Door : Tile {
 	public char letter {get; set; }
 	
 	public Door(Transform mt, Vector3 position, int rn) : base(mt, position, rn) {
-		tcolor = Color.blue;
-		myTile.renderer.material.color = tcolor;
+		//tcolor = Color.blue;
+		//myTile.renderer.material.color = tcolor;
+		myTile.renderer.material.mainTexture = (Texture2D) Resources.Load("DoorTexture", typeof(Texture2D));
+		//myTile.renderer.material = (Material)Resources.Load("DoorTile", typeof(Material));
+		
 	}
 	
 	public override void collide() {

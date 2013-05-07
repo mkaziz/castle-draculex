@@ -1,14 +1,6 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\LevelLoader\LevelLoader.cs">
-    <Files>
-      <File FileName="Assets\LevelLoader\LevelLoader.cs" Line="5" Column="20" />
-      <File FileName="Assets\LevelLoader\Room.cs" Line="100" Column="40" />
-      <File FileName="Assets\LevelLoader\Tile.cs" Line="66" Column="90" />
-      <File FileName="Assets\LevelLoader\Map.cs" Line="13" Column="24" />
-      <File FileName="Assets\Follower.js" Line="45" Column="19" />
-    </Files>
-  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="C:\Users\khalid\Desktop\castle-draculex\castle-draculex\Assets\Follower.js" line="34" />

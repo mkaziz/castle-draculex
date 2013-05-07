@@ -106,6 +106,7 @@
     <Compile Include="Assets\AstarPathfindingProject\Utilities\SizeProfiler.cs" />
     <Compile Include="Assets\AstarPathfindingProject\Utilities\UnityReferenceHelper.cs" />
     <Compile Include="Assets\AstarPathfindingProject\changelog.cs" />
+    <Compile Include="Assets\CameraFollow.cs" />
     <Compile Include="Assets\LevelLoader\LevelLoader.cs" />
     <Compile Include="Assets\LevelLoader\Map.cs" />
     <Compile Include="Assets\LevelLoader\Room.cs" />
@@ -238,6 +239,7 @@
     <None Include="Assets\AstarPathfindingProject\Plugins\JsonFx\License.txt" />
     <None Include="Assets\Orthello\Examples\0 - Simple Examples\TextSprites\orthello-font-30.txt" />
     <None Include="Assets\AstarPathfindingProject\Plugins\DotNetZip\License.txt" />
+    <None Include="Assets\LevelLoader\Levels\Rooms\Room1(Large).txt" />
     <None Include="Assets\Orthello\Examples\4 - Follow Target View\-orthello-config.xml" />
     <None Include="Assets\AstarPathfindingProject\ExampleScenes\Materials\Projector Multiply.shader" />
     <None Include="Assets\AstarPathfindingProject\Plugins\dependencies.txt" />
