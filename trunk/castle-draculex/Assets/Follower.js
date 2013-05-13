@@ -3,9 +3,7 @@
 
 var leader : Transform; 
 
-var speed : float = 5; // The speed of the follower 
-
-var colliding = false;
+var speed : float = 3; // The speed of the follower 
 
  
 function Start () {
@@ -16,7 +14,6 @@ var hit : RaycastHit;
 function FixedUpdate(){ 
 	
 	
-	if (!colliding) {
 		var distance = Vector3.Distance(leader.position, transform.position);
 		
 		if(distance < 7) {
@@ -33,17 +30,13 @@ function FixedUpdate(){
 	   	
    		rigidbody.MovePosition(rigidbody.position + transform.forward * speed * Time.deltaTime);
 	}
-	else {
-		Application.Quit();	
-		Debug.Break();
-	}
 }
 
 function OnTriggerEnter(other: Collider)
 {
-	Debug.Log("Collision");
+	Debug.Log("Collision Start");
 	colliding = true;
-	Debug.Break();
+	//Debug.Break();
 	
 }
 
