@@ -5,6 +5,8 @@ var leader : Transform;
 
 var speed : float = 3; // The speed of the follower 
 
+var colliding : boolean = false;
+ 
  
 function Start () {
 	transform.LookAt(leader);
@@ -30,7 +32,7 @@ function FixedUpdate(){
 	   	
    		rigidbody.MovePosition(rigidbody.position + transform.forward * speed * Time.deltaTime);
 	}
-}
+//}
 
 function OnTriggerEnter(other: Collider)
 {
