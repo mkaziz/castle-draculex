@@ -111,6 +111,7 @@
     <Compile Include="Assets\LevelLoader\Map.cs" />
     <Compile Include="Assets\LevelLoader\Room.cs" />
     <Compile Include="Assets\LevelLoader\Tile.cs" />
+    <Compile Include="Assets\ManualLevels\Rooms and Halls\TileSizeChild.cs" />
     <Compile Include="Assets\ManualLevels\Tile Prefabs\TileSize.cs" />
     <Compile Include="Assets\Orthello\Examples\0 - Simple Examples\(Unity Pro) NavMesh Pathfinding\Agent.cs" />
     <Compile Include="Assets\Orthello\Examples\0 - Simple Examples\3D integration\App.cs" />
