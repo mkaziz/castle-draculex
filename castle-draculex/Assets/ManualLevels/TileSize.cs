@@ -7,11 +7,14 @@ public class TileSize : MonoBehaviour {
 	void Start () {
 		float scaleX = transform.localScale.x;
        	float scaleY = transform.localScale.y;
-        renderer.material.mainTextureScale = new Vector2 (scaleX,scaleY);
+		float scalefactor = 10;
+		float myx = scaleX/scalefactor;
+		float myy = scaleY/scalefactor;
+        renderer.material.mainTextureScale = new Vector2 (myx, myy);
 	
 	}
 	
-/*	// Update is called once per frame
+	// Update is called once per frame
 	void Update () {
-	}*/
+	}
 }
