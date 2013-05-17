@@ -30,14 +30,22 @@ function FixedUpdate(){
 			speed = 3;
 	   	}
 	   	
-   		rigidbody.MovePosition(transform.position + transform.forward * speed * Time.deltaTime);
+	   	if (!colliding) {
+   			rigidbody.MovePosition(transform.position + transform.forward * speed * Time.deltaTime);
+   		}
 	}
 //}
 
 function OnTriggerEnter(other: Collider)
 {
 	Debug.Log("Collision Start");
-	colliding = true;
+	
+	if (other.name == leader.name) {
+		Debug.Break();
+	}
+	else {
+		colliding = true;
+	}
 	//Debug.Break();
 	
 }
