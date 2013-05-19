@@ -1,11 +1,13 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Player\PlayerControl.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Camera\HUD\Text.cs">
     <Files>
+      <File FileName="Assets\Player\PlayerControl.cs" Line="11" Column="21" />
       <File FileName="Assets\Editor\FindMissingScriptsRecursively.cs" Line="35" Column="6" />
-      <File FileName="Assets\Enemies\Follower.js" Line="44" Column="16" />
-      <File FileName="Assets\Levels\TileSizeLevel.cs" Line="9" Column="17" />
-      <File FileName="Assets\Player\PlayerControl.cs" Line="23" Column="33" />
+      <File FileName="Assets\Enemies\Follower.js" Line="62" Column="34" />
+      <File FileName="Assets\WorldObjects\LevelKey\KeyBehavior.cs" Line="12" Column="11" />
+      <File FileName="Assets\WorldObjects\LevelKey\GateBehavior.cs" Line="7" Column="11" />
+      <File FileName="Assets\Camera\HUD\Text.cs" Line="6" Column="31" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

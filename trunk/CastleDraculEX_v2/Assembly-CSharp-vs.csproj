@@ -45,9 +45,12 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Camera\CameraFollow.cs" />
+     <Compile Include="Assets\Camera\HUD\Text.cs" />
      <Compile Include="Assets\Levels\Tile Prefabs\TileSize.cs" />
      <Compile Include="Assets\Levels\TileSizeLevel.cs" />
      <Compile Include="Assets\Player\PlayerControl.cs" />
+     <Compile Include="Assets\WorldObjects\LevelKey\GateBehavior.cs" />
+     <Compile Include="Assets\WorldObjects\LevelKey\KeyBehavior.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

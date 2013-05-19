@@ -6,7 +6,10 @@ public class PlayerControl : MonoBehaviour {
     public float speed = 12.0F;
     //public float jumpSpeed = 8.0F;
     //public float gravity = 20.0F;
+
     private Vector3 moveDirection = Vector3.zero;
+	public bool hasKey1 = false;
+
     void Update() {
         CharacterController controller = GetComponent<CharacterController>();
 
