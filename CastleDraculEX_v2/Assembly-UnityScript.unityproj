@@ -61,6 +61,7 @@
      <Compile Include="Assets\Orthello\Examples\7 - Tweening\JSStar7_1.js" />
      <Compile Include="Assets\Orthello\Examples\7 - Tweening\JSStar7_2.js" />
      <Compile Include="Assets\Script\HidingPatch.js" />
+     <Compile Include="Assets\Script\HidingPlayer.js" />
      <None Include="Assets\Orthello\Examples\0 - Simple Examples\TextSprites\lorem.txt" />
      <None Include="Assets\Orthello\Examples\0 - Simple Examples\TextSprites\Atlases\russian.txt" />
      <None Include="Assets\Orthello\Examples\4 - Follow Target View\-orthello-config.xml" />
