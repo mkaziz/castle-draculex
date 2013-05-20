@@ -2,9 +2,7 @@
 
 
 var leader : Transform; 
-
 var speed : float = 3; // The speed of the follower 
-
 var colliding : boolean = false;
 
 //var collision_direction : 
@@ -18,8 +16,10 @@ function FixedUpdate(){
 	
 	
 		var distance = Vector3.Distance(leader.position, transform.position);
+		var playerHidingScript : HidingPlayer = leader.gameObject.GetComponent("HidingPlayer");
+		var hidden = playerHidingScript.hidden;
 		
-		if(distance < 7) {
+		if(distance < 7 && hidden === false) {
 		   	transform.LookAt(leader);
 		   	speed = 7;
 		   	transform.renderer.material.color = Color.white;
@@ -58,6 +58,7 @@ function OnTriggerEnter(other: Collider)
 	if (other.name == leader.name) {
 		Debug.Break();
 	}
+	else if (other.name == "HidingPlace") {}
 	else if (other.name == "Gate") {}
 	else if (other.name == "LevelKey") {}
 	else {
