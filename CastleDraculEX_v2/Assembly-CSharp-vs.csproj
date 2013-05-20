@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Camera\CameraFollow.cs" />
+    <Compile Include="Assets\Camera\HUD\Text.cs" />
     <Compile Include="Assets\Levels\Tile Prefabs\TileSize.cs" />
     <Compile Include="Assets\Levels\TileSizeLevel.cs" />
     <Compile Include="Assets\Orthello\Examples\0 - Simple Examples\(Unity Pro) NavMesh Pathfinding\Agent.cs" />
@@ -153,6 +154,8 @@
     <Compile Include="Assets\Script\Player.cs" />
     <Compile Include="Assets\Script\PlayerAnims.cs" />
     <Compile Include="Assets\Script\xa.cs" />
+    <Compile Include="Assets\WorldObjects\LevelKey\GateBehavior.cs" />
+    <Compile Include="Assets\WorldObjects\LevelKey\KeyBehavior.cs" />
     <None Include="Assets\Orthello\Examples\0 - Simple Examples\TextSprites\lorem.txt" />
     <None Include="Assets\Orthello\Examples\0 - Simple Examples\TextSprites\Atlases\russian.txt" />
     <None Include="Assets\Orthello\Examples\4 - Follow Target View\-orthello-config.xml" />
@@ -168,8 +171,6 @@
     <None Include="Assets\Orthello\Examples\0 - Simple Examples\RotateTowards\-read-me.txt" />
     <None Include="Assets\Orthello\Examples\0 - Simple Examples\Persistance\-read-me.txt" />
     <None Include="Assets\Orthello\Examples\0 - Simple Examples\TextSprites\lorem-rus-utf8.txt" />
-     <Compile Include="Assets\WorldObjects\LevelKey\GateBehavior.cs" />
-     <Compile Include="Assets\WorldObjects\LevelKey\KeyBehavior.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
