@@ -1,6 +1,6 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Camera\HUD\Text.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\Player.cs">
     <Files>
       <File FileName="Assets\Player\PlayerControl.cs" Line="11" Column="21" />
       <File FileName="Assets\Editor\FindMissingScriptsRecursively.cs" Line="35" Column="6" />
