@@ -37,16 +37,13 @@ function FixedUpdate(){
 			speed = 3;
 	   	}
 	   	
-	   	if (!colliding) {
-   			rigidbody.MovePosition(transform.position + transform.forward * speed * Time.deltaTime);
-   		}
-   		else {
+	   	if (colliding) {
    			//transform.localEulerAngles.x = Random.Range(30, 360);
    			//transform.Rotate(0.0,0.0,Random.Range(30, 360));
    			transform.Rotate(0.0,0.0,Random.Range(30, 360), Space.World);
    			//rigidbody.MovePosition(transform.position + transform.forward * speed * Time.deltaTime);
    		}
-   		
+		rigidbody.MovePosition(transform.position + transform.forward * speed * Time.deltaTime);
 
 	}
 //}
