@@ -1,8 +1,8 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Orthello\Examples\4 - Follow Target View\CExample4.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Enemies\Follower.js">
     <Files>
-      <File FileName="Assets\Orthello\Examples\4 - Follow Target View\CExample4.cs" Line="37" Column="1" />
+      <File FileName="Assets\Enemies\Follower.js" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
