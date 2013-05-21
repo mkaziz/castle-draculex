@@ -19,15 +19,15 @@ function FixedUpdate(){
 		var playerHidingScript : HidingPlayer = leader.gameObject.GetComponent("HidingPlayer");
 		var hidden = playerHidingScript.hidden;
 		
-		if(distance < 7 && hidden === false) {
+		if(distance < 7 && hidden === false) { //chasing!
 		   	transform.LookAt(leader);
 		   	speed = 7;
-		   	transform.renderer.material.color = Color.white;
-		   	transform.renderer.material.color.a = 255;
+		   	//transform.renderer.material.color = Color.grey;
+		   	transform.renderer.material.color.a = 100;
 	   	}
-	   	else {
-	   		transform.renderer.material.color = Color.gray;
-	   		transform.renderer.material.color.a = 50;
+	   	else { //not chasing
+	   		transform.renderer.material.color = Color.grey;
+	   		transform.renderer.material.color.a = 0;
 	   		if (Random.Range(0, 100) <= 1)
 	   		{
 				//transform.localEulerAngles.x = Random.Range(30, 360);
