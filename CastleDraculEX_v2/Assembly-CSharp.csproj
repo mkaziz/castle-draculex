@@ -47,6 +47,8 @@
   <ItemGroup>
     <Compile Include="Assets\Camera\CameraFollow.cs" />
     <Compile Include="Assets\Camera\HUD\Text.cs" />
+    <Compile Include="Assets\Enemies\Follower.cs" />
+    <Compile Include="Assets\Hiding\HidingPatch.cs" />
     <Compile Include="Assets\Levels\Tile Prefabs\TileSize.cs" />
     <Compile Include="Assets\Levels\TileSizeLevel.cs" />
     <Compile Include="Assets\Orthello\Examples\0 - Simple Examples\(Unity Pro) NavMesh Pathfinding\Agent.cs" />
@@ -150,6 +152,7 @@
     <Compile Include="Assets\Orthello\Standard Assets\OT\_Base\OTSounds.cs" />
     <Compile Include="Assets\Orthello\Standard Assets\OT\_Base\OTTimeCycle.cs" />
     <Compile Include="Assets\Orthello\Standard Assets\OT\_Base\OTTouch.cs" />
+    <Compile Include="Assets\Player\HidingPlayer.cs" />
     <Compile Include="Assets\Player\PlayerControl.cs" />
     <Compile Include="Assets\Script\Player.cs" />
     <Compile Include="Assets\Script\PlayerAnims.cs" />
