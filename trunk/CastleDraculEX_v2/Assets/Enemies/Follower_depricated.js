@@ -16,10 +16,10 @@ function FixedUpdate(){
 	
 	
 		var distance = Vector3.Distance(leader.position, transform.position);
-		var playerHidingScript : HidingPlayer = leader.gameObject.GetComponent("HidingPlayer");
-		var hidden = playerHidingScript.hidden;
+		//var playerHidingScript : HidingPlayer = leader.gameObject.GetComponent("HidingPlayer");
+		//var hidden = playerHidingScript.hidden;
 		
-		if(distance < 7 && hidden === false) { //chasing!
+		if(distance < 7) {//&& hidden === false) { //chasing!
 		   	transform.LookAt(leader);
 		   	speed = 7;
 		   	//transform.renderer.material.color = Color.grey;
