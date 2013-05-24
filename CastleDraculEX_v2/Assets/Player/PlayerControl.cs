@@ -4,6 +4,7 @@ using System.Collections;
 
 public class PlayerControl : MonoBehaviour {
     public float speed = 12.0F;
+	public int Health = 100;
     //public float jumpSpeed = 8.0F;
     //public float gravity = 20.0F;
 
@@ -11,6 +12,10 @@ public class PlayerControl : MonoBehaviour {
 	public bool hasKey1 = false;
 
     void Update() {
+		if (Health <= 0) {
+			
+			Debug.Break();
+		}
         CharacterController controller = GetComponent<CharacterController>();
 
 	            moveDirection = new Vector3(Input.GetAxis("Horizontal"),Input.GetAxis("Vertical"), 0);
@@ -24,7 +29,6 @@ public class PlayerControl : MonoBehaviour {
 		{
 			moveDirection = transform.TransformDirection(moveDirection);
 	        moveDirection *= speed;
-			
 		}
 
 			controller.Move(moveDirection * Time.deltaTime);
@@ -32,6 +36,7 @@ public class PlayerControl : MonoBehaviour {
     
 	public float pushPower = 2.0F;
     void OnControllerColliderHit(ControllerColliderHit hit) {
+		//health -= 10;
         Rigidbody body = hit.collider.attachedRigidbody;
         Debug.Log("HIT");
 		if (body == null || body.isKinematic)
@@ -41,5 +46,13 @@ public class PlayerControl : MonoBehaviour {
         body.velocity = pushDir * pushPower;
 		
     }
+	
+	/*void OnTriggerEnter(Collider other) {
+		Debug.Log("enemies?");
+		if (other.GetType() == ) {
+			Debug.Log("lost health");
+			Health -= 10;
+		}
+	}*/
 }
 
