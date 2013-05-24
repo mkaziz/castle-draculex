@@ -17,7 +17,7 @@ public class KeyBehavior : MonoBehaviour {
 	
 	void OnTriggerEnter(Collider other) {
 		if (other.name == player.name) {
-			t.displaytext = "You found the key!";
+			t.displaytext = "It's an old, rusted key.";
 			transform.renderer.enabled = false; //turn off renderer
 			PlayerControl pc = other.GetComponent<PlayerControl>();
 			pc.hasKey1 = true;

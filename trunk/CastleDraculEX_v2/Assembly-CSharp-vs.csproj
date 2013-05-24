@@ -157,6 +157,11 @@
     <Compile Include="Assets\Script\Player.cs" />
     <Compile Include="Assets\Script\PlayerAnims.cs" />
     <Compile Include="Assets\Script\xa.cs" />
+    <Compile Include="Assets\Story\Tutorial\HideTrigger.cs" />
+    <Compile Include="Assets\Story\Tutorial\Trigger1.cs" />
+    <Compile Include="Assets\Story\Tutorial\Trigger2.cs" />
+    <Compile Include="Assets\Story\Tutorial\Trigger3.cs" />
+    <Compile Include="Assets\Story\Tutorial\Tutorial.cs" />
     <Compile Include="Assets\WorldObjects\LevelKey\GateBehavior.cs" />
     <Compile Include="Assets\WorldObjects\LevelKey\KeyBehavior.cs" />
     <None Include="Assets\Orthello\Examples\0 - Simple Examples\TextSprites\lorem.txt" />
@@ -166,7 +171,9 @@
     <None Include="Assets\Orthello\Examples\0 - Simple Examples\TextSprites\orthello-font-30.txt" />
     <None Include="Assets\Orthello\-Update-Upgrade info.txt" />
     <None Include="Assets\Orthello\Examples\0 - Simple Examples\TextSprites\Atlases\img.xml" />
+    <None Include="Assets\Necromancer GUI\Kingthings.txt" />
     <None Include="Assets\Orthello\Examples\0 - Simple Examples\TextSprites\Atlases\glyph.xml" />
+    <None Include="Assets\Necromancer GUI\Readme.txt" />
     <None Include="Assets\Orthello\Examples\0 - Simple Examples\TextSprites\Atlases\chalk.xml" />
     <None Include="Assets\Orthello\Examples\0 - Simple Examples\Multi Resolution Art\atlas.xml" />
     <None Include="Assets\SpriteAtlases\playertest.xml" />
