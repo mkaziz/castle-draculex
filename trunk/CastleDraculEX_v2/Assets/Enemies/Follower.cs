@@ -54,7 +54,10 @@ void OnTriggerEnter(Collider other)
 	Debug.Log("Collision Start");
 	
 	if (other.name == leader.name) {
-		Debug.Break();
+		//Debug.Break();
+		Component playerHealthScript = leader.gameObject.GetComponent("PlayerControl");
+		PlayerControl pc = (PlayerControl) playerHealthScript;
+		pc.Health -= 40;
 	}
 	else if (other.name == "HidingPlace") {}
 	else if (other.name == "Gate") {}
