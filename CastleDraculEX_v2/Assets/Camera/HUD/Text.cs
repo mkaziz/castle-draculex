@@ -4,12 +4,17 @@ using System.Collections;
 public class Text : MonoBehaviour {
 	
 	public string displaytext = " ";
-	Rect myBackground = new Rect (25, 25, 100, 30);
-	GUIStyle style = new GUIStyle();
+	Rect myBackground = new Rect (25, 575, 100, 30);
+	public GUISkin style;
+	//GUIStyle style = new GUIStyle();
+	//todo: button for continue
+	//public  cont_button = new
 	
 	void Start () { 
-		style.wordWrap = true;
+		/*style.wordWrap = true;
 		style.normal.textColor = Color.white;
+		style.fontSize = 20;
+		style.font = Font.*/
 	}
 	
 	void Update() {
@@ -17,6 +22,7 @@ public class Text : MonoBehaviour {
 	}
 	
 	void OnGUI() {
-		GUI.Label(myBackground, displaytext, style);	
+		GUI.skin = style;
+		GUI.Label(myBackground, displaytext);	
 	}
 }

@@ -7,6 +7,7 @@ public class Follower : MonoBehaviour {
 	public float speed = 3;
 	public bool colliding = false;
 	RaycastHit hit;
+	float chase_radius = 10;
 	
 	// Use this for initialization
 	void Start () {
@@ -22,7 +23,7 @@ public class Follower : MonoBehaviour {
 		bool hidden = phs.hidden;
 		//bool hidden = false;
 		
-		if(distance < 7 && hidden == false) { //chasing!
+		if(distance < chase_radius && hidden == false) { //chasing!
 		   	transform.LookAt(leader);
 		   	speed = 7;
 			Color mycolor = transform.renderer.material.color;
