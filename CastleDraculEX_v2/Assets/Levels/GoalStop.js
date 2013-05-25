@@ -2,6 +2,7 @@
 
 
 var player : Transform; 
+var nextLevel : Transform;
 
 var speed : float = 3; // The speed of the follower 
 
@@ -18,7 +19,7 @@ function FixedUpdate(){
 	   	
 	   	if (colliding) {
    			Debug.Log("Yay you won!");
-   			Debug.Break();
+   			Application.LoadLevel(nextLevel.name);
    		}
 	}
 //}
