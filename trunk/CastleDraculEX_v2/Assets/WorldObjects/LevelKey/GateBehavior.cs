@@ -4,6 +4,7 @@ using System.Collections;
 public class GateBehavior : MonoBehaviour {
 	public Transform player;
 	public Transform HUD;
+	public string nextLevel;
 	Text t;// = new Text();
 	
 	void Start () {
@@ -16,7 +17,7 @@ public class GateBehavior : MonoBehaviour {
 			PlayerControl pc = other.GetComponent<PlayerControl>();
 			if(pc.hasKey1) {
 				t.displaytext = "Congratulations, you won!";
-				Debug.Break();
+				Application.LoadLevel(nextLevel);
 			}
 			else {
 				t.displaytext = "That is the gate. You need to get the key before you can enter.";
