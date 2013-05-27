@@ -1,20 +1,13 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\WorldObjects\LevelKey\GateBehavior.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Levels\WorldObjects\LevelKey\GateBehavior.cs">
     <Files>
+      <File FileName="Assets\Levels\WorldObjects\LevelKey\GateBehavior.cs" Line="11" Column="1" />
       <File FileName="Assets\Camera\HUD\Text.cs" Line="7" Column="34" />
       <File FileName="Assets\Enemies\Follower.cs" Line="26" Column="29" />
       <File FileName="Assets\Hiding\HidingPatch.cs" Line="33" Column="52" />
-      <File FileName="Assets\WorldObjects\LevelKey\KeyBehavior.cs" Line="20" Column="45" />
       <File FileName="Assets\Enemies\Follower_depricated.js" Line="22" Column="21" />
       <File FileName="Assets\Hiding\HidingPatch.js" Line="29" Column="5" />
-      <File FileName="Assets\Story\Tutorial\Trigger1.cs" Line="19" Column="2" />
-      <File FileName="Assets\Story\Tutorial\Trigger2.cs" Line="16" Column="30" />
-      <File FileName="Assets\Story\Tutorial\Trigger3.cs" Line="16" Column="50" />
-      <File FileName="Assets\Story\Tutorial\HideTrigger.cs" Line="18" Column="4" />
-      <File FileName="Assets\Story\Tutorial\Tutorial.cs" Line="33" Column="6" />
-      <File FileName="Assets\Levels\GoalStop.js" Line="19" Column="6" />
-      <File FileName="Assets\WorldObjects\LevelKey\GateBehavior.cs" Line="20" Column="36" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
