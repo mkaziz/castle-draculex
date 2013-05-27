@@ -1,9 +1,10 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Levels\WorldObjects\LevelKey\GateBehavior.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Levels\MainMenu\MainMenu.cs">
     <Files>
+      <File FileName="Assets\Levels\MainMenu\MainMenu.cs" Line="20" Column="17" />
       <File FileName="Assets\Levels\WorldObjects\LevelKey\GateBehavior.cs" Line="11" Column="1" />
-      <File FileName="Assets\Camera\HUD\Text.cs" Line="7" Column="34" />
+      <File FileName="Assets\Camera\HUD\Text.cs" Line="24" Column="2" />
       <File FileName="Assets\Enemies\Follower.cs" Line="26" Column="29" />
       <File FileName="Assets\Hiding\HidingPatch.cs" Line="33" Column="52" />
       <File FileName="Assets\Enemies\Follower_depricated.js" Line="22" Column="21" />
