@@ -53,12 +53,14 @@ public class Follower : MonoBehaviour {
 
 void OnTriggerEnter(Collider other)
 {
-	Debug.Log("Collision Start");
+	//Debug.Log("Collision Start");
 	
 	if (other.name == leader.name) {
 		//Debug.Break();
 		Component playerHealthScript = leader.gameObject.GetComponent("PlayerControl");
 		PlayerControl pc = (PlayerControl) playerHealthScript;
+		//Component playerHealthScript = leader.gameObject.GetComponent("Player");
+		//Player pc = (Player) playerHealthScript;
 		pc.Health -= 40;
 		//audio.PlayOneShot(damage);
 		//damage.Play();
