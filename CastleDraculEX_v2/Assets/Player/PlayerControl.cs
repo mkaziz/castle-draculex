@@ -41,11 +41,27 @@ public class PlayerControl : MonoBehaviour {
         Debug.Log("HIT");
 		if (body == null || body.isKinematic)
             return;
+		
+		if (body.rigidbody.tag == "Enemy") {
+			//health -= 10;
+		}
         
         Vector3 pushDir = new Vector3(0, hit.moveDirection.y, hit.moveDirection.z);
         body.velocity = pushDir * pushPower;
 		
     }
+	
+	public bool increaseHealth(int h) {
+		if (Health == 100) {
+			return false;
+		}
+		else {
+			Health = Health + h;
+			if (Health > 100)
+				Health = 100;
+			return true;
+		}
+	}
 	
 	/*void OnTriggerEnter(Collider other) {
 		Debug.Log("enemies?");
