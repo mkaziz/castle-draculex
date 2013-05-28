@@ -4,8 +4,8 @@ using System.Collections;
 public class HealthBarScript : MonoBehaviour {
 
 	public float barDisplay; //current progress
-    public Vector2 pos = new Vector2(20,40);
-    public Vector2 size = new Vector2(60,20);
+    public Vector2 pos = new Vector2(5,5);
+    public Vector2 size = new Vector2(1,20);
     public Texture2D emptyTex;
     public Texture2D fullTex;
 	
