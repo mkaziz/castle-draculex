@@ -33,6 +33,9 @@ public class Player : MonoBehaviour {
 	private Vector3 spawnPoint;
 	private Vector3 ladderHitbox;
 	
+	public int Health = 100;
+	public bool hasKey1 = false;
+	
 	void Awake() 
 	{
 		thisTransform = transform;
@@ -53,6 +56,10 @@ public class Player : MonoBehaviour {
 	
 	public void Update ()
 	{		
+		if (Health <= 0)
+		{
+			Debug.Break();
+		}
 		//UpdateRaycasts();
 		xa.blockedRight = false;
 		xa.blockedLeft = false;
@@ -62,28 +69,28 @@ public class Player : MonoBehaviour {
 		// move left
 		if(xa.isLeft /*&& !xa.shooting*/) 
 		{
-			moveDirX = -1;
+			moveDirX = -2;
 			xa.facingDir = 1;
 		}
 		
 		// move right
 		if(xa.isRight /*&& !xa.shooting*/) 
 		{
-			moveDirX = 1;
+			moveDirX = 2;
 			xa.facingDir = 2;
 		}
 		
 		// move up on ladder
 		if(xa.isUp)
 		{
-			moveDirY = 1;
+			moveDirY = 2;
 			xa.facingDir = 3;
 		}
 		
 		// move down on ladder
 		if(xa.isDown) 
 		{
-			moveDirY = -1;
+			moveDirY = -2;
 			xa.facingDir = 4;
 		}
 		
