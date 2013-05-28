@@ -8,6 +8,7 @@ public class Follower : MonoBehaviour {
 	public bool colliding = false;
 	RaycastHit hit;
 	float chase_radius = 10;
+	public AudioClip clip;
 	//AudioSource[] myAudio = GetComponents(AudioSource);
 	//AudioSource music = myAudio[0];
 	//AudioSource damage = myAudio[1];
@@ -18,7 +19,6 @@ public class Follower : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
 		float distance = Vector3.Distance(leader.position, transform.position);
 		Component playerHidingScript = leader.gameObject.GetComponent("HidingPlayer");
 		HidingPlayer phs = (HidingPlayer) playerHidingScript;

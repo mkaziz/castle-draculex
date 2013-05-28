@@ -41,10 +41,6 @@ public class PlayerControl : MonoBehaviour {
         Debug.Log("HIT");
 		if (body == null || body.isKinematic)
             return;
-		
-		if (body.rigidbody.tag == "Enemy") {
-			//health -= 10;
-		}
         
         Vector3 pushDir = new Vector3(0, hit.moveDirection.y, hit.moveDirection.z);
         body.velocity = pushDir * pushPower;
