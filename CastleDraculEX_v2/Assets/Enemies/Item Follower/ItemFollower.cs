@@ -65,7 +65,10 @@ void OnTriggerEnter(Collider other)
 		//Debug.Break();
 		Component playerHealthScript = leader.gameObject.GetComponent("PlayerControl");
 		PlayerControl pc = (PlayerControl) playerHealthScript;
-		pc.Health -= 40;
+		if (pc.hasKey1)
+		{
+			pc.Health -= 40;
+		}
 		//audio.PlayOneShot(damage);
 		//damage.Play();
 	}
