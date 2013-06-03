@@ -5,9 +5,10 @@ public class Follower : MonoBehaviour {
 	
 	public Transform leader;
 	public float speed = 3;
+	float chase_speed = 10;
 	public bool colliding = false;
 	RaycastHit hit;
-	float chase_radius = 10;
+	float chase_radius = 15;
 	public AudioClip clip;
 	//AudioSource[] myAudio = GetComponents(AudioSource);
 	//AudioSource music = myAudio[0];
@@ -27,7 +28,7 @@ public class Follower : MonoBehaviour {
 		
 		if(distance < chase_radius && hidden == false) { //chasing!
 		   	transform.LookAt(leader);
-		   	speed = 7;
+		   	speed = chase_speed;
 			Color mycolor = transform.renderer.material.color;
 			mycolor.a = 100;
 		   	transform.renderer.material.color = mycolor;

@@ -1,14 +1,15 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Health\HealthBarScript.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\WorldObjects\Health\HealthBarScript.cs">
     <Files>
-      <File FileName="Assets\Health\HealthBarScript.cs" Line="30" Column="58" />
+      <File FileName="Assets\WorldObjects\Lamp\flicker.cs" Line="39" Column="5" />
       <File FileName="Assets\Camera\HUD\Text.cs" Line="1" Column="1" />
-      <File FileName="Assets\Health\health.cs" Line="20" Column="4" />
       <File FileName="Assets\Player\PlayerControl.cs" Line="43" Column="20" />
-      <File FileName="Assets\Enemies\Follower.cs" Line="23" Column="1" />
-      <File FileName="Assets\Hiding\HidingPatch.js" Line="29" Column="5" />
-      <File FileName="Assets\Camera\CameraFollow.cs" Line="1" Column="1" />
+      <File FileName="Assets\Enemies\Follower.cs" Line="23" Column="61" />
+      <File FileName="Assets\Camera\CameraFollow.cs" Line="6" Column="2" />
+      <File FileName="Assets\Player\LightFollow.cs" Line="7" Column="2" />
+      <File FileName="Assets\WorldObjects\Health\HealthBarScript.cs" Line="6" Column="20" />
+      <File FileName="Assets\WorldObjects\LevelKey\KeyBehavior.cs" Line="15" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
