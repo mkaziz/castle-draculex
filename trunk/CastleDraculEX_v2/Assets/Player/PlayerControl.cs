@@ -13,8 +13,7 @@ public class PlayerControl : MonoBehaviour {
 
     void Update() {
 		if (Health <= 0) {
-			
-			Debug.Break();
+			Application.LoadLevel("MainMenu");
 		}
         CharacterController controller = GetComponent<CharacterController>();
 
