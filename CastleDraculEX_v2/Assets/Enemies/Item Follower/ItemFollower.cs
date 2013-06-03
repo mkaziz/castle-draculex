@@ -24,8 +24,8 @@ public class ItemFollower : MonoBehaviour {
 		HidingPlayer phs = (HidingPlayer) playerHidingScript;
 		bool hidden = phs.hidden;
 		//bool hidden = false;
-		Component playerControlScript = leader.gameObject.GetComponent("PlayerControl");
-		PlayerControl pc = (PlayerControl) playerControlScript;
+		Component playerScript = leader.gameObject.GetComponent("Player");
+		Player pc = (Player) playerScript;
 		bool hasKey = pc.hasKey1;
 		
 		if(hasKey) {
@@ -63,8 +63,8 @@ void OnTriggerEnter(Collider other)
 	
 	if (other.name == leader.name) {
 		//Debug.Break();
-		Component playerHealthScript = leader.gameObject.GetComponent("PlayerControl");
-		PlayerControl pc = (PlayerControl) playerHealthScript;
+		Component playerHealthScript = leader.gameObject.GetComponent("Player");
+		Player pc = (Player) playerHealthScript;
 		if (pc.hasKey1)
 		{
 			pc.Health -= 40;

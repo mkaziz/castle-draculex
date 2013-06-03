@@ -34,7 +34,7 @@ public class PlayerControl : MonoBehaviour {
 	  }
     
 	public float pushPower = 2.0F;
-    void OnControllerColliderHit(ControllerColliderHit hit) {
+    /*void OnControllerColliderHit(ControllerColliderHit hit) {
 		//health -= 10;
         Rigidbody body = hit.collider.attachedRigidbody;
         Debug.Log("HIT");
@@ -44,7 +44,7 @@ public class PlayerControl : MonoBehaviour {
         Vector3 pushDir = new Vector3(0, hit.moveDirection.y, hit.moveDirection.z);
         body.velocity = pushDir * pushPower;
 		
-    }
+    }*/
 	
 	public bool increaseHealth(int h) {
 		if (Health == 100) {

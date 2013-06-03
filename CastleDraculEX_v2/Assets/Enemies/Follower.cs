@@ -9,10 +9,10 @@ public class Follower : MonoBehaviour {
 	public bool colliding = false;
 	RaycastHit hit;
 	float chase_radius = 15;
-	public AudioClip clip;
+	public AudioClip damage;
 	//AudioSource[] myAudio = GetComponents(AudioSource);
 	//AudioSource music = myAudio[0];
-	//AudioSource damage = myAudio[1];
+	//AudioSource damage = myAudio[0];
 	// Use this for initialization
 	void Start () {
 		transform.LookAt(leader);
@@ -58,12 +58,12 @@ void OnTriggerEnter(Collider other)
 	
 	if (other.name == leader.name) {
 		//Debug.Break();
-		Component playerHealthScript = leader.gameObject.GetComponent("PlayerControl");
-		PlayerControl pc = (PlayerControl) playerHealthScript;
-		//Component playerHealthScript = leader.gameObject.GetComponent("Player");
-		//Player pc = (Player) playerHealthScript;
+		//Component playerHealthScript = leader.gameObject.GetComponent("PlayerControl");
+		//PlayerControl pc = (PlayerControl) playerHealthScript;
+		Component playerHealthScript = leader.gameObject.GetComponent("Player");
+		Player pc = (Player) playerHealthScript;
 		pc.Health -= 40;
-		//audio.PlayOneShot(damage);
+		audio.PlayOneShot(damage);
 		//damage.Play();
 	}
 	else if (other.name == "HidingPlace") {}

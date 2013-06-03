@@ -27,8 +27,12 @@ public class HealthBarScript : MonoBehaviour {
        //however you would set this value based on your desired display
        //eg, the loading progress, the player's health, or whatever.
        //barDisplay = 100;
-   		Component playerHealthScript = GameObject.FindWithTag("Player").GetComponent("PlayerControl");
-		PlayerControl pc = (PlayerControl) playerHealthScript;
+   		
+		//Component playerHealthScript = GameObject.FindWithTag("Player").GetComponent("PlayerControl");
+		//PlayerControl pc = (PlayerControl) playerHealthScript;
+		
+		Component playerHealthScript = GameObject.FindWithTag("Player").GetComponent("Player");
+		Player pc = (Player) playerHealthScript;
 		barDisplay = pc.Health * 3;
     }
 }

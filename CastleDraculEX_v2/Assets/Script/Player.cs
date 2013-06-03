@@ -6,6 +6,9 @@ using System.Collections;
 
 public class Player : MonoBehaviour {
 
+    private Vector3 moveDirection = Vector3.zero;
+    public float speed = 12.0F;
+
 	// shoot objects
 	private Transform shootParent;
 	private Renderer shootRenderer;
@@ -58,7 +61,7 @@ public class Player : MonoBehaviour {
 	{		
 		if (Health <= 0)
 		{
-			Debug.Break();
+            Application.LoadLevel("MainMenu");
 		}
 		//UpdateRaycasts();
 		xa.blockedRight = false;
@@ -100,12 +103,7 @@ public class Player : MonoBehaviour {
 			xa.onRope = false;
 			dropFromRope = true;
 		}
-		
-		// shoot
-		if (xa.isShoot && !xa.shooting && !xa.onRope && !xa.falling && !shotBlockedLeft && !shotBlockedRight) 
-		{
-			StartCoroutine(Shoot());
-		}
+	
 		//xa.onLadder = true;
 		//xa.blockedUp = false;
 		//xa.blockedDown = false;
@@ -115,7 +113,7 @@ public class Player : MonoBehaviour {
 	
 	void UpdateMovement() 
 	{
-		// player is not falling so move normally
+		/*// player is not falling so move normally
 		//if(!xa.falling || xa.onLadder) 
 		//{
 			movement = new Vector3(moveDirX, moveDirY,0f);
@@ -124,8 +122,26 @@ public class Player : MonoBehaviour {
 			
 		//}
 		
-		// player is falling so apply gravity
-	}
+		// player is falling so apply gravity*/
+
+
+        CharacterController controller = GetComponent<CharacterController>();
+
+	            moveDirection = new Vector3(Input.GetAxis("Horizontal"),Input.GetAxis("Vertical"), 0);
+
+		if (Input.GetKeyUp(KeyCode.LeftArrow) && Input.GetKeyUp(KeyCode.RightArrow) && 
+			Input.GetKeyUp(KeyCode.UpArrow) && Input.GetKeyUp(KeyCode.DownArrow))
+			{
+	            moveDirection = Vector3.zero;
+		}
+		else 
+		{
+			moveDirection = transform.TransformDirection(moveDirection);
+	        moveDirection *= speed;
+		}
+
+			controller.Move(moveDirection * Time.deltaTime);
+	 }
 	
 	/* ============================== RAYCASTS ============================== */
 	
@@ -222,31 +238,7 @@ public class Player : MonoBehaviour {
 	}	
 	
 	/* ============================== SHOOT ====================================================================== */
-	
-	IEnumerator Shoot()
-	{
-		xa.shooting = true;
-		
-		// show the shoot sprite and play the animation
-		shootRenderer.enabled = true;
-		shootSprite.Play("shoot");
-		
-		// check facing direction and flip the shoot parent to the correct side
-		if(xa.facingDir == 1)
-		{
-			shootParent.localScale = new Vector3(1,1,1); // left side
-		}
-		if(xa.facingDir == 2)
-		{
-			shootParent.localScale = new Vector3(-1,1,1); // right side
-		}
-		
-		yield return new WaitForSeconds(0.4f);
-		
-		// hide the sprite
-		shootRenderer.enabled = false;
-		xa.shooting = false;
-	}
+
 	
 	/* ============================== DEATH AND RESPAWN ====================================================================== */
 	
@@ -273,56 +265,8 @@ public class Player : MonoBehaviour {
 		}*/
 	}
 	
-	void OnTriggerStay(Collider other)
+	/*void OnTriggerStay(Collider other)
 	{
-		// has the player been crushed by a block?
-		// this will be added in an upcomming tutorial
-		/*if (other.gameObject.CompareTag("Crusher"))
-		{
-			if(xa.alive)
-			{
-				xa.alive = false;
-				RespawnPlayer();
-				xa.sc.LifeSubtract();
-			}
-		}*/
-		
-		// is the player overlapping a ladder?
-		
-		/*if(other.gameObject.CompareTag("Ladder"))
-		{
-			xa.onLadder = false;
-			xa.blockedUp = false;
-			xa.blockedDown = false;
-			
-			ladderHitbox.y = other.transform.localScale.y * 0.5f; // get half the ladders Y height
-			
-			// is the player overlapping the ladder?
-			// if player is landing on top of ladder from a fall, let him pass by
-			if ((thisTransform.position.y + xa.playerHitboxY) < ((ladderHitbox.y + 0.1f) + other.transform.position.y))
-			{
-				xa.onLadder = true;
-				xa.falling = false;
-			}
-			
-			// if the player is at the top of the ladder, then snap her to the top
-			if ((thisTransform.position.y + xa.playerHitboxY) >= (ladderHitbox.y + other.transform.position.y) && xa.isUp)
-			{
-				xa.blockedUp = true;
-				xa.glx = thisTransform.position;
-                xa.glx.y = (ladderHitbox.y + other.transform.position.y) - xa.playerHitboxY;
-                thisTransform.position = xa.glx;
-			}
-			
-			// if the player is at the bottom of the ladder, then snap her to the bottom
-			if ((thisTransform.position.y - xa.playerHitboxY) <= (-ladderHitbox.y + other.transform.position.y))
-			{
-				xa.blockedDown = true;
-				xa.glx = thisTransform.position;
-				xa.glx.y = (-ladderHitbox.y + other.transform.position.y) + xa.playerHitboxY;
-                thisTransform.position = xa.glx;
-			}
-		}*/
 		
 		// is the player overlapping a rope?
 		if(other.gameObject.CompareTag("Rope"))
@@ -342,24 +286,24 @@ public class Player : MonoBehaviour {
                 }
 			}
 		}
-	}
+	}*/
 	
-	void OnTriggerExit(Collider other)
-	{
-		/*
-		// did the player exit a rope trigger?
-		if (other.gameObject.CompareTag("Rope"))
-		{
-			xa.onRope = false;
-			dropFromRope = false;
-		}
-		
-		// did the player exit a ladder trigger?
-		if (other.gameObject.CompareTag("Ladder")) 
-		{
-			xa.onLadder = false;
-		}*/
-	}
+
+    public bool increaseHealth(int h)
+    {
+        if (Health == 100)
+        {
+            return false;
+        }
+        else
+        {
+            Health = Health + h;
+            if (Health > 100)
+                Health = 100;
+            return true;
+        }
+    }
+
 	public float pushPower = 2.0F;
 	void OnControllerColliderHit(ControllerColliderHit hit) {
         Rigidbody body = hit.collider.attachedRigidbody;

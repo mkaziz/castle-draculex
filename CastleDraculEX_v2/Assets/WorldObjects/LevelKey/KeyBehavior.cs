@@ -19,7 +19,8 @@ public class KeyBehavior : MonoBehaviour {
 		if (other.name == player.name) {
 			t.displaytext = "It's an old, rusted key.";
 			transform.renderer.enabled = false; //turn off renderer
-			PlayerControl pc = other.GetComponent<PlayerControl>();
+			//PlayerControl pc = other.GetComponent<PlayerControl>();
+			Player pc = other.GetComponent<Player>();
 			pc.hasKey1 = true;
 		}
 	
