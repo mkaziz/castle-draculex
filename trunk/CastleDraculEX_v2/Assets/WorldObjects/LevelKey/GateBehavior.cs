@@ -14,7 +14,8 @@ public class GateBehavior : MonoBehaviour {
 	void OnTriggerEnter(Collider other) {
 
 		if (other.name == player.name) {
-			PlayerControl pc = other.GetComponent<PlayerControl>();
+			//PlayerControl pc = other.GetComponent<PlayerControl>();
+			Player pc = other.GetComponent<Player>();
 			if(pc.hasKey1) {
 				t.displaytext = "Congratulations, you won!";
 				Application.LoadLevel(nextLevel);

@@ -17,8 +17,11 @@ public class health : MonoBehaviour {
 		
 		if (other.gameObject.tag == "Player") {
 			
-			Component playerHealthScript = other.gameObject.GetComponent("PlayerControl");
-			PlayerControl pc = (PlayerControl) playerHealthScript;
+			//Component playerHealthScript = other.gameObject.GetComponent("PlayerControl");
+			//PlayerControl pc = (PlayerControl) playerHealthScript;
+			
+			Component playerHealthScript = other.gameObject.GetComponent("Player");
+			Player pc = (Player) playerHealthScript;
 			bool packTaken = pc.increaseHealth(40);
 			
 			if (packTaken)
