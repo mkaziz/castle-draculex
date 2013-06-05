@@ -69,6 +69,7 @@ void OnTriggerEnter(Collider other)
 	else if (other.name == "HidingPlace") {}
 	else if (other.name == "Gate") {}
 	else if (other.name == "LevelKey") {}
+	else if (other.tag == "Trigger") {}
 	else {
 		colliding = true;
 	}
