@@ -17,6 +17,7 @@ public class HealthBarScript : MonoBehaviour {
 	}
  
     void OnGUI() {
+		GUI.Label(new Rect(5, 5, 50, 20), "Health");
 		GUI.DrawTexture(new Rect(pos.x, pos.y, pos.x+size.x, pos.y+size.y), emptyTex, ScaleMode.StretchToFill, false, 10.0F);
 		GUI.DrawTexture(new Rect(pos.x, pos.y, pos.x+barDisplay, pos.y+size.y), fullTex, ScaleMode.StretchToFill, false, 10.0F);
 
