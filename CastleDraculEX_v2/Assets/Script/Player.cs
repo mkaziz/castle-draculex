@@ -37,6 +37,7 @@ public class Player : MonoBehaviour {
 	private Vector3 ladderHitbox;
 	
 	public int Health = 100;
+	public int healthPackCount = 0;
 	public bool hasKey1 = false;
 	
 	void Awake() 
@@ -109,6 +110,10 @@ public class Player : MonoBehaviour {
 		//xa.blockedDown = false;
 		
 		UpdateMovement();
+		
+		if (Input.GetKeyDown(KeyCode.H)) {
+			increaseHealth(40);
+		}
 	}
 	
 	void UpdateMovement() 
@@ -142,6 +147,8 @@ public class Player : MonoBehaviour {
 
 			controller.Move(moveDirection * Time.deltaTime);
 	 }
+	
+	
 	
 	/* ============================== RAYCASTS ============================== */
 	
@@ -295,15 +302,24 @@ public class Player : MonoBehaviour {
         {
             return false;
         }
-        else
+        else if (healthPackCount > 0)
         {
             Health = Health + h;
             if (Health > 100)
                 Health = 100;
-            return true;
+			
+			healthPackCount -= 1;
+            
+			return true;
         }
+		else {return false;}
     }
-
+	
+	public void receiveHealthPack()
+    {
+        healthPackCount += 1;
+	}
+	
 	public float pushPower = 2.0F;
 	void OnControllerColliderHit(ControllerColliderHit hit) {
         Rigidbody body = hit.collider.attachedRigidbody;

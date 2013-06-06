@@ -20,6 +20,7 @@ public class Follower : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+ 		
 		float distance = Vector3.Distance(leader.position, transform.position);
 		Component playerHidingScript = leader.gameObject.GetComponent("HidingPlayer");
 		HidingPlayer phs = (HidingPlayer) playerHidingScript;

@@ -22,10 +22,8 @@ public class health : MonoBehaviour {
 			
 			Component playerHealthScript = other.gameObject.GetComponent("Player");
 			Player pc = (Player) playerHealthScript;
-			bool packTaken = pc.increaseHealth(40);
-			
-			if (packTaken)
-	        	Destroy(this.gameObject);
+			pc.receiveHealthPack();
+        	Destroy(this.gameObject);
 		}
 	}
 }
