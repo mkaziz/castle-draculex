@@ -8,16 +8,22 @@ public class HealthBarScript : MonoBehaviour {
     public Vector2 size = new Vector2(1,20);
     public Texture2D emptyTex;
     public Texture2D fullTex;
+    public Texture2D healthPackTex;
+	public bool hasHealthPack = false;
 	
 	void Start() {
 		
 		emptyTex.wrapMode = TextureWrapMode.Repeat;
 		fullTex.wrapMode = TextureWrapMode.Repeat;
-		barDisplay = 300;
+		
 	}
  
     void OnGUI() {
-		GUI.Label(new Rect(5, 5, 50, 20), "Health");
+		Component playerHealthScript = GameObject.FindWithTag("Player").GetComponent("Player");
+		Player pc = (Player) playerHealthScript;
+		
+		GUI.DrawTexture(new Rect(5,5,30,30), healthPackTex, ScaleMode.ScaleToFit, false, 0.0F);
+		GUI.Label(new Rect(10, 35, 20, 20), "x "+ pc.healthPackCount.ToString());
 		GUI.DrawTexture(new Rect(pos.x, pos.y, pos.x+size.x, pos.y+size.y), emptyTex, ScaleMode.StretchToFill, false, 10.0F);
 		GUI.DrawTexture(new Rect(pos.x, pos.y, pos.x+barDisplay, pos.y+size.y), fullTex, ScaleMode.StretchToFill, false, 10.0F);
 

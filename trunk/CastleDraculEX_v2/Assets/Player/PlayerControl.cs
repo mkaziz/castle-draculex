@@ -21,14 +21,16 @@ public class PlayerControl : MonoBehaviour {
 
 		if (Input.GetKeyUp(KeyCode.LeftArrow) && Input.GetKeyUp(KeyCode.RightArrow) && 
 			Input.GetKeyUp(KeyCode.UpArrow) && Input.GetKeyUp(KeyCode.DownArrow))
-			{
+		{
 	            moveDirection = Vector3.zero;
 		}
-		else 
+		else
 		{
 			moveDirection = transform.TransformDirection(moveDirection);
 	        moveDirection *= speed;
 		}
+		
+	
 
 			controller.Move(moveDirection * Time.deltaTime);
 	  }
