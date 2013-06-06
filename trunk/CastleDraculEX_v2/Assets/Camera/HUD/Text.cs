@@ -4,7 +4,7 @@ using System.Collections;
 public class Text : MonoBehaviour {
 	
 	public string displaytext = " ";
-	Rect myBackground = new Rect (25, 575, 100, 30);
+	Rect myBackground = new Rect (25, 500, 100, 30);
 	public GUISkin style;
 	//GUIStyle style = new GUIStyle();
 	//todo: button for continue
@@ -18,11 +18,15 @@ public class Text : MonoBehaviour {
 	}
 	
 	void Update() {
-		myBackground.width = displaytext.Length * 10;
+		//myBackground.width = displaytext.Length * 10;
 	}
 	
 	void OnGUI() {
 		GUI.skin = style;
-		GUI.Label(myBackground, displaytext);	
+		GUILayout.BeginVertical();
+			GUILayout.Space(550);
+			GUILayout.Label(displaytext, GUILayout.ExpandWidth(true));
+		GUILayout.EndVertical();
+		
 	}
 }
