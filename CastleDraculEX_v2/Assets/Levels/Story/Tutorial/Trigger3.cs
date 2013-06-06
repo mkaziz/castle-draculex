@@ -12,7 +12,7 @@ public class Trigger3 : MonoBehaviour {
 	}
 	
 		void OnTriggerEnter(Collider other) {
-		if (other.name == player.name) {
+		if (other.tag == "Player") {
 		t.displaytext = "The sound is getting quieter. Maybe I can find someplace to hide next time.";
 		}
 	}
