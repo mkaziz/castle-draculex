@@ -18,7 +18,7 @@ public class Trigger1 : MonoBehaviour {
 	}
 	
 	void OnTriggerEnter(Collider other) {
-		if (other.name == player.name) {
+		if (other.tag == "Player") {
 		t.displaytext = "I think I hear something...";
 		}
 	}
