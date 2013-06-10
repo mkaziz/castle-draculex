@@ -4,12 +4,13 @@ using System.Collections;
 public class HideTrigger : MonoBehaviour {
 	
 	public Transform myHUD;
-	public Transform player;
+	GameObject player;
 	Text t;
 
 	// Use this for initialization
 	void Start () {
 		t = (Text) myHUD.GetComponent("Text");
+		player = GameObject.FindWithTag("Player");
 	}
 	
 	void OnTriggerEnter(Collider other) {

@@ -83,7 +83,7 @@ void OnTriggerEnter(Collider other)
 
 void OnTriggerExit(Collider other)
 {
-	Debug.Log("End Collision");
+	//Debug.Log("End Collision");
 	colliding = false;
 }
 
