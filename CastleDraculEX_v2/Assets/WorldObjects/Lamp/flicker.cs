@@ -5,41 +5,45 @@ public class flicker : MonoBehaviour {
 
 	float minOnFlickerSpeed = 0.2f;
 	float maxOnFlickerSpeed = 0.5f;
-	float minOffFlickerSpeed = 0.05f;
-	float maxOffFlickerSpeed = 0.1f;
+	float minOffFlickerSpeed = 0.01f;
+	float maxOffFlickerSpeed = 0.05f;
+	
+	float off_screen_distance = 30;
+	
+	GameObject player;
 	
 	void Start() {
+		
 		gameObject.light.enabled = true;	
-		StartCoroutine(initiateflicker());
-		/*while (true) {
-			gameObject.light.enabled = true;
-			Debug.Log("Flickering on!");
-			float n1 = Random.Range(minOnFlickerSpeed, maxOnFlickerSpeed );
-			yield return new WaitForSeconds(n1);
-			gameObject.light.enabled = false;
-			Debug.Log("Flickering off!");
-			n1 = Random.Range(minOffFlickerSpeed, maxOffFlickerSpeed );
-			yield return new WaitForSeconds(n1);
-		}*/
+		
+		player = GameObject.FindWithTag("Player");
 		
 	}
-	
-	// Update is called once per frame
+	float dist = 0;
+	bool light_off = true;
 	void Update () {
-		
+		dist = Vector3.Distance(player.transform.position, gameObject.transform.position);
+		if (light_off && dist < off_screen_distance) {
+			StartCoroutine(initiateflicker());
+		}
 	}
 	
 	IEnumerator initiateflicker () {
-		
-		gameObject.light.enabled = true;
-		//Debug.Log("Flickering on!");
-		float n1 = Random.Range(minOnFlickerSpeed, maxOnFlickerSpeed );
-		yield return new WaitForSeconds(n1);
-		gameObject.light.enabled = false;
-		//Debug.Log("Flickering off!");
-		n1 = Random.Range(minOffFlickerSpeed, maxOffFlickerSpeed );
-		yield return new WaitForSeconds(n1);
-		StartCoroutine(initiateflicker());
+		if(dist < off_screen_distance){ //optimize - if off screen, don't turn it on
+			gameObject.light.enabled = true;
+			float n1 = Random.Range(minOnFlickerSpeed, maxOnFlickerSpeed );
+			yield return new WaitForSeconds(n1);
+			gameObject.light.enabled = false;
+			
+			n1 = Random.Range(minOffFlickerSpeed, maxOffFlickerSpeed );
+			yield return new WaitForSeconds(n1);
+		}
+		else {
+			yield return new WaitForSeconds(1000);
+			light_off = false;
+		}
+			StartCoroutine(initiateflicker());
+
 	}
 	
 }
