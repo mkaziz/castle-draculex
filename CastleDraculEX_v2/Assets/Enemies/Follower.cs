@@ -10,6 +10,7 @@ public class Follower : MonoBehaviour {
 	RaycastHit hit;
 	float chase_radius = 15;
 	public AudioClip damage;
+    int timer;
 	//AudioSource[] myAudio = GetComponents(AudioSource);
 	//AudioSource music = myAudio[0];
 	//AudioSource damage = myAudio[0];
@@ -61,6 +62,7 @@ void OnTriggerEnter(Collider other)
 		//Debug.Break();
 		//Component playerHealthScript = leader.gameObject.GetComponent("PlayerControl");
 		//PlayerControl pc = (PlayerControl) playerHealthScript;
+        timer = 0;
 		Component playerHealthScript = leader.gameObject.GetComponent("Player");
 		Player pc = (Player) playerHealthScript;
 		pc.Health -= 40;
@@ -77,9 +79,22 @@ void OnTriggerEnter(Collider other)
 	
 }
 
+void OnTriggerStay(Collider other) 
+{
+    if (other.name == leader.name && timer >= 30) {
+        Component playerHealthScript = leader.gameObject.GetComponent("Player");
+        Player pc = (Player) playerHealthScript;
+        pc.Health -= 40;
+        audio.PlayOneShot(damage);
+        timer = 0;
+    }
+    timer++;
+}
+
 void OnTriggerExit(Collider other)
 {
 	//Debug.Log("End Collision");
+    timer = 0;
 	colliding = false;
 }
 
