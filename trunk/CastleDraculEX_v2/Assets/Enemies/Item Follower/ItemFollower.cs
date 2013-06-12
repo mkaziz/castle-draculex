@@ -8,6 +8,7 @@ public class ItemFollower : MonoBehaviour {
 	public bool colliding = false;
 	RaycastHit hit;
 	float chase_radius = 10;
+    int timer;
 	//AudioSource[] myAudio = GetComponents(AudioSource);
 	//AudioSource music = myAudio[0];
 	//AudioSource damage = myAudio[1];
@@ -59,32 +60,45 @@ public class ItemFollower : MonoBehaviour {
 
 void OnTriggerEnter(Collider other)
 {
-	Debug.Log("Collision Start");
+	Collide(other);
+}
 	
-	if (other.name == leader.name) {
-		//Debug.Break();
-		Component playerHealthScript = leader.gameObject.GetComponent("Player");
-		Player pc = (Player) playerHealthScript;
-		if (pc.hasKey1)
-		{
-			pc.Health -= 40;
-		}
-		//audio.PlayOneShot(damage);
-		//damage.Play();
-	}
-	else if (other.name == "HidingPlace") {}
-	else if (other.name == "Gate") {}
-	else if (other.name == "LevelKey") {}
-	else {
-		colliding = true;
-	}
-	
+void OnTriggerStay(Collider other) 
+{
+    Collide(other);
 }
 
 void OnTriggerExit(Collider other)
 {
 	//Debug.Log("End Collision");
+    timer = 0;
 	colliding = false;
+}	
+	
+void Collide (Collider other) {
+   if (other.name == leader.name && timer >= 2) {
+        Component playerHealthScript = leader.gameObject.GetComponent("Player");
+        Player pc = (Player) playerHealthScript;
+        Component playerHidingScript = leader.gameObject.GetComponent("HidingPlayer");
+		HidingPlayer phs = (HidingPlayer) playerHidingScript;
+		
+		if (!phs.hidden && pc.hasKey1) {
+			pc.Health -= 4;
+        	timer = 0;
+		}
+    	
+	}
+	else if (other.name == "HidingPlace") {
+		transform.Rotate(0.0f,0.0f,Random.Range(90, 270), Space.World);
+	}
+	else if (other.name == "Gate") {}
+	else if (other.name == "LevelKey") {}
+	else if (other.tag == "Trigger") {}
+	else {
+		colliding = true;
+	}	
+	timer++;
 }
+
 
 }
