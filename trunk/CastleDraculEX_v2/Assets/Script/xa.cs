@@ -35,7 +35,7 @@ public class xa : MonoBehaviour {
 	public static bool shooting;
 
 	public static int facingDir = 1; // 1 = left, 2 = right, 3 = up, 4 = down
-	public enum anim { None, WalkLeft, WalkRight, RopeLeft, RopeRight, Climb, ClimbStop, StandLeft, StandRight, HangLeft, HangRight, FallLeft, FallRight , ShootLeft, ShootRight }
+	public enum anim { None, WalkLeft, WalkRight, RopeLeft, RopeRight, Climb, ClimbDown, ClimbStop, StandLeft, StandRight, HangLeft, HangRight, FallLeft, FallRight , ShootLeft, ShootRight }
 
 	public static Vector3 glx;
 
