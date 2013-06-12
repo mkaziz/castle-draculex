@@ -17,54 +17,70 @@ public class PlayerAnims : MonoBehaviour {
 	
 	void Update() 
 	{
-		// run left
-		if(xa.isLeft && currentAnim != xa.anim.WalkLeft)
-		{
-			currentAnim = xa.anim.WalkLeft;
-			mySprite.Play("runLeft");
-		}
-		if(!xa.isLeft && currentAnim != xa.anim.WalkLeft && xa.facingDir == 1)
-		{
-			currentAnim = xa.anim.WalkLeft;
-			//mySprite.ShowFrame(1); // stand left
-		}
-		
-		// run right
-		if(xa.isRight && currentAnim != xa.anim.WalkRight)
-		{
-			currentAnim = xa.anim.WalkRight;
-			mySprite.Play("runRight");
-		}
-		if(!xa.isRight && currentAnim != xa.anim.WalkRight && xa.facingDir == 2)
-		{
-			currentAnim = xa.anim.WalkRight;
-			//mySprite.ShowFrame(1); // stand left
-		}
-		
-		// climb
-		if(xa.isUp && currentAnim != xa.anim.Climb)
-		{
-			currentAnim = xa.anim.Climb;
-			mySprite.Play("climb");
-		}
-        if (xa.isDown && currentAnim != xa.anim.ClimbDown)
+        /*
+        // Diagonals
+        if ((xa.isUp || xa.isDown) && xa.isRight && currentAnim != xa.anim.WalkRight)
         {
-            currentAnim = xa.anim.ClimbDown;
-            mySprite.Play("climbDown");
+            currentAnim = xa.anim.WalkRight;
+            mySprite.Play("runRight");
         }
+        else if ((xa.isUp || xa.isDown) && xa.isLeft && currentAnim != xa.anim.WalkLeft)
+        {
+            currentAnim = xa.anim.WalkLeft;
+            mySprite.Play("runLeft");
+        }*/
+        // run left
+            if (xa.isLeft && currentAnim != xa.anim.WalkLeft)
+            {
+                currentAnim = xa.anim.WalkLeft;
+                mySprite.Play("runLeft");
+            }
+            if (!xa.isLeft && currentAnim != xa.anim.StandLeft && xa.facingDir == 1)
+            {
+                currentAnim = xa.anim.StandLeft;
+                mySprite.ShowFrame(12); // stand left
+            }
 
-		if(!xa.isUp && currentAnim != xa.anim.ClimbStop && xa.facingDir == 3)
-		{
-			currentAnim = xa.anim.ClimbStop;
-			mySprite.ShowFrame(1); // climb left
-		}
-		
-		if(!xa.isDown && currentAnim != xa.anim.ClimbStop && xa.facingDir == 4)
-		{
-			currentAnim = xa.anim.ClimbStop;
-			mySprite.ShowFrame(1); // climb left
-		}
-		
+            // run right
+            if (xa.isRight && currentAnim != xa.anim.WalkRight)
+            {
+                currentAnim = xa.anim.WalkRight;
+                mySprite.Play("runRight");
+            }
+            if (!xa.isRight && currentAnim != xa.anim.StandRight && xa.facingDir == 2)
+            {
+                currentAnim = xa.anim.StandRight;
+                mySprite.ShowFrame(12); // stand left
+            }
+
+            // climb
+            if (xa.isUp && currentAnim != xa.anim.Climb)
+            {
+                currentAnim = xa.anim.Climb;
+                mySprite.Play("climb");
+            }
+            if (xa.isDown && currentAnim != xa.anim.ClimbDown)
+            {
+                currentAnim = xa.anim.ClimbDown;
+                mySprite.Play("climbDown");
+            }
+
+            if (!xa.isUp && currentAnim != xa.anim.ClimbStop && xa.facingDir == 3)
+            {
+                currentAnim = xa.anim.ClimbStop;
+                mySprite.ShowFrame(12); // climb left
+            }
+
+            if (!xa.isDown && currentAnim != xa.anim.ClimbStop && xa.facingDir == 4)
+            {
+                currentAnim = xa.anim.ClimbStop;
+                mySprite.ShowFrame(12); // climb left
+            }
+        
+
+
+
+	/*	
 		// rope
 		if(xa.isLeft && xa.onRope && currentAnim != xa.anim.RopeLeft)
 		{
@@ -110,6 +126,6 @@ public class PlayerAnims : MonoBehaviour {
 		{
 			currentAnim = xa.anim.ShootRight;
 			mySprite.ShowFrame(0); // shoot right
-		}
+		}*/
 	}
 }
