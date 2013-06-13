@@ -62,7 +62,7 @@ public class Player : MonoBehaviour {
 	{		
 		if (Health <= 0)
 		{
-            Application.LoadLevel("MainMenu");
+            Application.LoadLevel("Death");
 		}
 		//UpdateRaycasts();
 		xa.blockedRight = false;
