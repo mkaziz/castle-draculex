@@ -323,7 +323,7 @@ public class Player : MonoBehaviour {
 	public float pushPower = 2.0F;
 	void OnControllerColliderHit(ControllerColliderHit hit) {
         Rigidbody body = hit.collider.attachedRigidbody;
-        Debug.Log("HIT");
+        //Debug.Log("HIT");
 		if (body == null || body.isKinematic)
             return;
         

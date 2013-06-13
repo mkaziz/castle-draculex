@@ -1,26 +1,12 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-<<<<<<< .mine
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\WorldObjects\Hiding\HidingPatch.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\WorldObjects\Lamp\flicker.cs">
     <Files>
-      <File FileName="Assets\WorldObjects\Hiding\HidingPatch.cs" Line="23" Column="35" />
+      <File FileName="Assets\WorldObjects\Lamp\flicker.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
-=======
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Enemies\Item Follower\ItemFollower.cs">
-    <Files>
-      <File FileName="Assets\WorldObjects\Health\health.cs" Line="1" Column="1" />
-      <File FileName="Assets\Player\HidingPlayer.cs" Line="1" Column="1" />
-      <File FileName="Assets\Enemies\Follower.cs" Line="12" Column="26" />
-      <File FileName="Assets\Enemies\Item Follower\ItemFollower.cs" Line="86" Column="19" />
-    </Files>
-  </MonoDevelop.Ide.Workbench>
->>>>>>> .r90
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="C:\Users\Rebecca\Documents\395\DraculEX\New Pull\CastleDraculEX_v2\Assets\Enemies\Follower.cs" line="23" />
-      <Breakpoint file="C:\Users\khalid\Desktop\castle-draculex\CastleDraculEX_v2\Assets\Enemies\Follower.cs" line="83" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
