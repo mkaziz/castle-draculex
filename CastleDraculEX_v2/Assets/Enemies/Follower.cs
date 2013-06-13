@@ -11,9 +11,6 @@ public class Follower : MonoBehaviour {
 	float chase_radius = 15;
 	public AudioClip damage;
     int timer = 0;
-	//AudioSource[] myAudio = GetComponents(AudioSource);
-	//AudioSource music = myAudio[0];
-	//AudioSource damage = myAudio[0];
 	// Use this for initialization
 	void Start () {
 		transform.LookAt(leader);
