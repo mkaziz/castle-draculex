@@ -15,9 +15,9 @@ public class Player : MonoBehaviour {
 	private OTAnimatingSprite shootSprite;
 
 	// movement
-	//private float moveSpeed = 5;
-	//private int moveDirX;
-	//private int moveDirY;
+	private float moveSpeed = 5;
+	private int moveDirX;
+	private int moveDirY;
 	private Vector3 movement;
 	private Transform thisTransform;
 			
@@ -29,7 +29,7 @@ public class Player : MonoBehaviour {
 	private int groundMask = 1 << 8; // layer = Ground
 	private int shootMask = 1 << 8 | 1 << 9; // layers = Ground, Ladder
 		
-	//private bool dropFromRope = false;
+	private bool dropFromRope = false;
 	private bool shotBlockedLeft;
 	private bool shotBlockedRight;
 	
