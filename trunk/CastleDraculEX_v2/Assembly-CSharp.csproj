@@ -48,6 +48,7 @@
     <Compile Include="Assets\Camera\CameraFollow.cs" />
     <Compile Include="Assets\Camera\HUD\Text.cs" />
     <Compile Include="Assets\Enemies\Follower.cs" />
+    <Compile Include="Assets\Enemies\FollowerStart.cs" />
     <Compile Include="Assets\Enemies\Item Follower\ItemFollower.cs" />
     <Compile Include="Assets\Levels\Death\ReturnToLevel.cs" />
     <Compile Include="Assets\Levels\MainMenu\MainMenu.cs" />
