@@ -17,7 +17,7 @@ public class MainMenu : MonoBehaviour {
 		GUILayout.Box(draculex);
 		
 		if (GUILayout.Button ("Start", GUILayout.ExpandWidth(true))) {
-			Application.LoadLevel("main");	
+			Application.LoadLevel("start");	
 		}
 		
 			//myLabel("Skip to a level");
@@ -32,6 +32,12 @@ public class MainMenu : MonoBehaviour {
 			}
 			else if (mylevel == "cheese") {
 				loadLevel("main");	
+			}
+			else if (mylevel == "lightbulb") {
+				loadLevel("end");	
+			}
+			else if (mylevel == "ghosts") {
+				loadLevel("start");	
 			}
 			else {
 				mylevel = "Not a valid password!";
