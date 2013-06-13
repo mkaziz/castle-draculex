@@ -1,0 +1,5 @@
+Starter level - ghosts 
+Level 1 - cheese
+Level 2 - pencil
+Level 3 - firecracker
+End level - lightbulb
