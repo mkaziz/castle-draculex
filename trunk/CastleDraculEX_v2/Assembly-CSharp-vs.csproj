@@ -49,6 +49,7 @@
     <Compile Include="Assets\Camera\HUD\Text.cs" />
     <Compile Include="Assets\Enemies\Follower.cs" />
     <Compile Include="Assets\Enemies\Item Follower\ItemFollower.cs" />
+    <Compile Include="Assets\Levels\Death\ReturnToLevel.cs" />
     <Compile Include="Assets\Levels\MainMenu\MainMenu.cs" />
     <Compile Include="Assets\Levels\Story\Tutorial\HideTrigger.cs" />
     <Compile Include="Assets\Levels\Story\Tutorial\Trigger1.cs" />
