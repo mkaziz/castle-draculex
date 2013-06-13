@@ -3,27 +3,51 @@ using System.Collections;
 
 public class MainMenu : MonoBehaviour {
 	
+	
 	public GUISkin skin;
-
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+	public Texture draculex;
+	string mylevel = "Enter level passcode";
 	
 	void OnGUI() {
 		GUI.skin = skin;
-		int boxY = 70;
-		int boxX = 120;
-		int y_offset = 250;
 		
-		if (GUI.Button (new Rect ((Screen.width - boxX)/2,y_offset,boxX,boxY), "Start")) {
+		
+		GUILayout.BeginArea(new Rect (Screen.width/2-200, Screen.height/2 - 200, 400, 400));
+		
+		GUILayout.Box(draculex);
+		
+		if (GUILayout.Button ("Start", GUILayout.ExpandWidth(true))) {
 			Application.LoadLevel("main");	
 		}
+		
+			//myLabel("Skip to a level");
+			mylevel = GUILayout.TextArea(mylevel);//, GUILayout.ExpandWidth(true), GUILayout.ExpandHeight(false));
+		
+		if (GUILayout.Button("Go")) { //, GUILayout.ExpandWidth(true))) {
+			if (mylevel == "pencil") {
+				loadLevel("level3");
+			}
+			else if (mylevel == "firecracker") {
+				loadLevel("level2");
+			}
+			else if (mylevel == "cheese") {
+				loadLevel("main");	
+			}
+			else {
+				mylevel = "Not a valid password!";
+			}
+		}
+		
 
+		
+		GUILayout.EndVertical();
+	}
+	
+	void loadLevel(string s) {
+		Application.LoadLevel(s);		
+	}
+	
+	void myLabel(string s) {
+		GUILayout.Label (s, GUILayout.ExpandWidth(true), GUILayout.ExpandHeight(false));	
 	}
 }

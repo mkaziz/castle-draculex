@@ -2,16 +2,6 @@ using UnityEngine;
 using System.Collections;
 
 public class ReturnToLevel : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 	
 	public GUISkin skin;
 	public string mainText = "...Can you hear me? I think we lost him...";
@@ -20,12 +10,6 @@ public class ReturnToLevel : MonoBehaviour {
 	
 	void OnGUI() {
 		GUI.skin = skin;
-		int boxY = 70;
-		int boxX = 120;
-		int y_offset = -150;
-		
-		float xpos = (Screen.width - boxX)/2;
-		float ypos = y_offset;
 		
 		GUILayout.BeginArea(new Rect (Screen.width/2-200, Screen.height/2 - 200, 400, 500));
 			//GUILayout.Space(550);
