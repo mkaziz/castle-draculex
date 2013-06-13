@@ -9,34 +9,57 @@ public class flicker : MonoBehaviour {
 	float maxOffFlickerSpeed = 0.2f;
 	
 	float off_screen_distance = 30;
+	float nearby_distance = 10;
 	
 	GameObject player;
 	
 	void Start() {
-		gameObject.light.enabled = true;	
+		gameObject.light.enabled = false;	
 		player = GameObject.FindWithTag("Player");	
-		StartCoroutine(initiateflicker());
 	}
 	
-	float dist = 0;
+	float dist = 100;
 	bool light_on = false;
+	bool coroutine_running = false;
 	void Update () {
-		//dist = Vector3.Distance(player.transform.position, gameObject.transform.position);
-		//if (!light_on && onScreen ()) {
-		//	StartCoroutine(initiateflicker());
-		//	light_on = true;
-		//}
+		dist = Vector3.Distance(player.transform.position, gameObject.transform.position);
+		if (nearby () && !light_on && !coroutine_running) {
+			//Debug.Log ("starting coroutine! first time");
+			coroutine_running = true;
+			StartCoroutine("initiateflicker");
+			light_on = true;
+			
+		}
+		
+		if (!onScreen () && light_on && coroutine_running) {
+			//Debug.Log("STOPPING COROUTINE!");
+			coroutine_running = false;
+			StopCoroutine("initiateflicker");
+			gameObject.light.enabled = false;
+			
+		}
+		
+		if (onScreen() && light_on && !coroutine_running) {
+			//Debug.Log ("starting coroutine - return to screen");
+			coroutine_running = true;
+			StartCoroutine("initiateflicker");
+			
+		}
+
 	}
 	
 	bool onScreen() {
 		return dist < off_screen_distance;	
 	}
 	
+	bool nearby() {
+		return dist < nearby_distance;
+	}
+	
 	float wait_time;
 	
 	IEnumerator initiateflicker () {
-		//dist = Vector3.Distance(player.transform.position, gameObject.transform.position);
-		//if(dist < off_screen_distance){ //flicker if on screen
+		while (coroutine_running) {
 			gameObject.light.enabled = true;
 			float wait_time = Random.Range(minOnFlickerSpeed, maxOnFlickerSpeed );
 			yield return new WaitForSeconds(wait_time);
@@ -44,17 +67,7 @@ public class flicker : MonoBehaviour {
 			gameObject.light.enabled = false;
 			wait_time = Random.Range(minOffFlickerSpeed, maxOffFlickerSpeed );
 			yield return new WaitForSeconds(wait_time);
-			
-			StartCoroutine(initiateflicker());
-		/*}
-		else { //turn it off if off screen
-			gameObject.light.enabled = false;
-			//new WaitForSeconds(1000); 
-			light_on = false;
-			yield break;
-		}*/
-			
-
+		}
 	}
 	
 }
